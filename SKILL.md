@@ -9,6 +9,8 @@ description: Independently review authorized or public Management Science and Op
 
 Act as an independent, evidence-calibrated, constructive MS/OR referee. Begin with a deliberately broad, high-recall search for manuscript-specific candidate ideas—including publishable assets, possible flaws, rival mechanisms, missing bridges, and sharp questions—without deciding severity or recommendation. Then verify, disconfirm, merge, and rank them, retaining only the few that materially change the publication case. Propose the resulting report thesis, issue order, reserve ideas, and author requests for confirmation. Only after the user confirms that plan, turn it into a full report. Treat correctness, contribution, evidence, and managerial relevance as a connected claim chain rather than independent checklists.
 
+Use an **adaptive-depth workflow**. The invariant is a reasoned paper-level judgment across Motivation, Execution, and Insight, supported by manuscript-specific evidence; the individual tables, maps, cue menus, and reviewer passes are diagnostic instruments, not rituals. Use the smallest set that resolves the publication case, deepen only where a triggered route could change the thesis or recommendation, and never let completion of a template substitute for judgment.
+
 This skill supports three modes:
 
 1. **Blind review** — independently assess a manuscript.
@@ -40,7 +42,7 @@ If the task includes a real report, decision letter, later revision, or response
 
 ### 3. Separate discovery from prose
 
-Default to the **sharp-comments checkpoint**. Preserve the broad candidate board internally, then present a filled recommended top-idea set plus a compact reserve list rather than a blank questionnaire or a generic “which comments should I use?” prompt. Every checkpoint must visibly include both the high-recall idea board and the promotion board; a concise request may shorten rows but must not omit either board. Do not draft a polished report until the user confirms the substantive idea set and report posture. A direct instruction such as “按这个写,” “use this plan,” or “write the report now with M1–M4” counts as confirmation; an initial request to review a paper does not.
+Default to the **sharp-comments checkpoint**. Preserve enough of the candidate and promotion reasoning internally to make ranking auditable, then present a filled recommended top-idea set plus a compact reserve list rather than a blank questionnaire or a generic “which comments should I use?” prompt. Show the full high-recall and promotion boards only for calibration, an audit request, or when the ranking cannot be understood without them; a normal checkpoint may give the approval card, the top comments, and the strongest unpromoted routes in natural prose or compact tables. Do not draft a polished report until the user confirms the substantive idea set and report posture. A direct instruction such as “按这个写,” “use this plan,” or “write the report now with M1–M4” counts as confirmation; an initial request to review a paper does not.
 
 ## Route the review
 
@@ -90,26 +92,25 @@ Complete a provisional overall assessment across six dimensions:
 
 Treat these as four primary merits plus two cross-cutting checks: **motivation/problem importance**, **research thesis and formulation**, **execution/rigor/completeness**, and **result interest/insight**; novelty and claim calibration cut across them. Assess every merit even after finding a serious problem elsewhere. A mathematical error is one possible execution defect, not a substitute for judging the importance of the question, the first-order status of the research object, the quality of the overall analysis, or the interest of the results.
 
-For each dimension, record the strongest support, the main reservation, and whether it is established, promising but incomplete, or not established. Then write one paragraph stating the intended claim to fame, strongest publishable asset, conditional editorial-merit bottleneck, and their provisional repairability. Add the credibility bottleneck only after the detailed audit.
+For each dimension, reach a reasoned judgment using the strongest support, the main reservation, and a decisive counterfactual. Record the full six-row card when it helps an audit or calibration; otherwise a compact MEI note may combine related dimensions. Then write one paragraph stating the intended claim to fame, strongest publishable asset, conditional editorial-merit bottleneck, and their provisional repairability. Add the credibility bottleneck only after the detailed audit.
 
-Do not merely pose the six questions. Use the judgment anchors in the reference and record, for every dimension: the author's claim, strongest positive evidence, strongest adverse evidence, a counterfactual test, and an explicit adjudication. Praise such as “important,” “rigorous,” or “extensive” is incomplete unless it states what that fact establishes for the publication case.
+Do not merely pose the six questions. Use the judgment anchors in the reference to reach an explicit adjudication; expand the full claim–positive evidence–adverse evidence–counterfactual chain only for dimensions that are disputed or decision-relevant. Every negative overall judgment still needs a checkable evidence path. Praise such as “important,” “rigorous,” or “extensive” is incomplete unless it states what that fact establishes for the publication case.
 
 This is a provisional editorial thesis, not a numeric score. Do not average an important problem and rigorous mathematics against a secondary research object, an absent contribution, or a fatal validity gap. Revise the thesis after the detailed audit, but do not let detailed comments replace it.
 
 After reading the introduction, institutional description, closest-literature claim, and model/design—but before studying the result derivations deeply—freeze a **pre-result prior**: the independent operational map, the most plausible first-order mechanisms, the closest canonical baseline, and the qualitative conclusions already implied by the assumptions. Use this prior to distinguish sophisticated derivations of expected results from genuine structural surprise.
 
-Before opening proof appendices or beginning error hunting, complete and freeze the **pre-audit editorial sheet** in `assets/sharp-comments-checkpoint.md`. Complete every operation triggered by the manuscript, mark untriggered rows `N/A` with a short reason, and add manuscript-specific tests when the listed cues miss the likely contribution route. Do not advance until it contains:
+Before opening proof appendices or beginning error hunting, freeze a **minimum editorial prior** using `assets/sharp-comments-checkpoint.md`. It must contain:
 
 - a conditional-on-correctness publication verdict: if every formal and empirical result were valid, would the paper clear the journal bar, and why or why not?
-- an explicit canonical-reduction table whenever the paper names a new model/problem class; map context, state, action, timing/information, objective, feasible policies, and complexity into the closest standard object, then state exactly what does not carry over;
-- an independent decision-layer map and, whenever failure/stockout/rejection/unavailability occurs, the full downstream recourse set and the omitted response most likely to change the policy or distributional conclusion;
-- whenever a probability, risk score, forecast, or latent state is treated as known, an `estimate -> decide -> censor/select -> update` map; and whenever a new theorem, rate, or lemma carries the theory route, a `known engine -> new obstacle -> resolving step -> consequential delta` map;
-- one candidate conclusion from each reviewer-style pass that is relevant to the manuscript, even if the conclusion supports the paper; and
+- the first-order object, strongest rival object or mechanism, closest canonical or literature baseline, and qualitative conclusions predictable before reading the results;
 - the strongest prospective asset plus the **conditional editorial-merit bottleneck**, neither of which may be a proof/data error discovered later.
+
+Then select only the diagnostic modules triggered by the manuscript and capable of changing that prior. Examples include canonical reduction for a newly named model, a decision-layer/recourse map for an application claim, an `estimate -> decide -> censor/select -> update` map for learned inputs, or a `known engine -> new obstacle -> resolving step -> consequential delta` map for a theory contribution. Do not write `N/A` rows or run low-yield modules for completeness. Add a manuscript-specific test whenever the menu misses the likely contribution route.
 
 Treat this as a real freeze: do not silently rewrite it after the technical audit. Record later changes as post-audit adjudication. A newly named object cannot be classified as theoretically first-order merely because its topic is fundamental; first show what consequential structure, guarantee, rate, or capability survives the canonical reduction. An omitted recourse cannot remain a background note when the manuscript's own failure event triggers it; explicitly adjudicate whether it changes objective value, policy/ranking, or distributional outcomes.
 
-Complete the seven-sentence **editorial-first memo** in `references/editorial-threshold-reasoning.md` before beginning the proof/data audit. In particular, run the first-order-object, perfect-solution, rival-mechanism, policy-reversal, decision-delta, and contribution-deletion tests. Keep this editorial ledger separate from the detailed execution ledger so that a discovered theorem error neither substitutes for nor suppresses the question: “If every result were correct, would this paper clear the journal bar?” Continue the other merits assessment after a fatal error so that the report can identify what, if anything, remains worth preserving.
+Write a compact **editorial-first memo** before beginning the proof/data audit. Use the seven-sentence form in `references/editorial-threshold-reasoning.md` when it sharpens the reasoning, but do not repeat the same judgment merely to fill seven slots. Run the first-order-object, perfect-solution, rival-mechanism, policy-reversal, decision-delta, and contribution-deletion tests that are material to the paper. Keep this editorial ledger separate from the detailed execution ledger so that a discovered theorem error neither substitutes for nor suppresses the question: “If every result were correct, would this paper clear the journal bar?” Continue the other merits assessment after a fatal error so that the report can identify what, if anything, remains worth preserving.
 
 Maintain two distinct bottlenecks and never collapse them:
 
@@ -118,7 +119,7 @@ Maintain two distinct bottlenecks and never collapse them:
 
 The final recommendation must explain which bottleneck controls and why. If a fatal technical error controls the current decision, still report the conditional editorial verdict and publication path that would remain after repair.
 
-Triangulate the provisional thesis with all three reviewer-style passes in the same reference: **phenomenon origin/first-order object**, **prescriptive closure**, and **generative model/knowledge yield**. Do not select only the pass that confirms the initial verdict. Preserve useful disagreement—for example, an application object may be secondary while the abstract model remains theoretically generative.
+Challenge the provisional thesis with the reviewer-style passes in the same reference: **phenomenon origin/first-order object**, **prescriptive closure**, and **generative model/knowledge yield**. Use every pass that can expose a distinct route, but merge or skip a pass that merely restates an established conclusion. Do not select only the pass that confirms the initial verdict. Preserve useful disagreement—for example, an application object may be secondary while the abstract model remains theoretically generative.
 
 Before criticizing details, compress the paper into one page:
 
@@ -151,7 +152,7 @@ Do not accept an upstream state as exogenous merely because the paper declares i
 
 Before accepting the manuscript's organization, run a **paper-identity fork**. Decide whether the primary contribution is (a) decision support for computing policies, (b) structural/managerial insight from a restricted policy class, or (c) an empirical fact or validated intervention. Record the evidence standard appropriate to that identity. A hybrid paper may contain all three, but it must say which one carries the publication case; standard computation, thin empirical illustration, and special-case insight should not obscure one another.
 
-Build an **application-witness matrix** for every headline mechanism, parameter regime, and prescribed role choice. Record: the real decision maker; whether the action is feasible; the physical duration of a period; whether consumption is individual or aggregate; whether multiple products can be consumed in that period; whether unavailable content remains accessible; the scarce resource or soft budget; and a concrete setting where substitute, complement, regular, rotational, or other labeled roles actually occur. A mathematically admissible regime without a coherent operational witness supports conditional theory, not a broad application claim.
+Build an **application witness** for each distinct headline mechanism or prescribed role whose feasibility carries an application claim; one representative witness may cover several regimes with the same operational semantics. Record the real decision maker, action feasibility, period duration, individual-versus-aggregate consumption, joint consumption, continued access, scarce resource or soft budget, and a concrete setting for the named roles. A mathematically admissible regime without a coherent operational witness supports conditional theory, not a broad application claim.
 
 ### Phase C — Run independent discovery passes
 
@@ -173,11 +174,11 @@ These cues generate candidates, not criticisms or coverage obligations. Record e
 - Reconstruct the event order, state, action, feasibility constraints, observability, and benchmark.
 - Test whether all application variables exist in the model at the time they are used.
 - Check units, conditioning, indexing, signs, denominators, and whether randomness is ex ante or realized.
-- Build a **claim-semantics ladder** for every safety, service, fairness, reliability, or violation claim. Record the protected unit, conditioning event, time aggregation, population aggregation, and probability quantifier; distinguish expected cumulative constraints, expected violation regret, chance constraints, stagewise guarantees, and pathwise/entity-level guarantees. Require the title, theorem, simulation metric, and application language to occupy the same rung.
-- Compare formal assumptions with every simulation and application mechanism in a table.
+- Build a **claim-semantics ladder** for headline safety, service, fairness, reliability, or violation claims. Record the protected unit, conditioning event, time aggregation, population aggregation, and probability quantifier; distinguish expected cumulative constraints, expected violation regret, chance constraints, stagewise guarantees, and pathwise/entity-level guarantees. Require the title, theorem, simulation metric, and application language to occupy the same rung.
+- Compare formal assumptions with the headline simulation and application mechanisms; use a table only when several mismatches must be tracked.
 - Probe common-root versus heterogeneous arrivals, stationarity versus finite horizon, exact primitives versus learned proxies, and identical service versus operational heterogeneity.
 - Treat any “known predicted probability/score” as an estimated state: trace when it is estimated, how it updates, how decisions censor feedback, and how it would be re-estimated.
-- At every stockout, rejection, service failure, unavailable choice, or other forced transition, enumerate the full **behavioral recourse ladder**: retry, substitute within category, substitute across categories, wait, abandon, or take an outside option. If a recourse is omitted, require validation of its effect on objective value, policy/ranking, and distributional outcomes—not only aggregate fit or revenue.
+- At a material stockout, rejection, service failure, unavailable choice, or other forced transition, enumerate the plausible **behavioral recourse ladder**: retry, substitute within category, substitute across categories, wait, abandon, or take an outside option. Prioritize the omitted response most likely to change the objective, policy/ranking, or distributional outcome; do not audit immaterial branches for completeness.
 - Close the assumption family before treating derived parameters as free: check whether symmetry, monotonicity, normalization, support, or boundary assumptions imply equalities or restrictions that later estimation and simulations violate.
 - When consumers choose continuous quantities across products, run a **resource-conservation and aggregation test**. Identify what limits time, attention, money, visits, or total usage; distinguish a hard budget from diminishing marginal utility; and distinguish one person's joint consumption from aggregate demand across heterogeneous users. Test whether the period length makes simultaneous positive quantities physically meaningful. If total consumption expands with assortment breadth, require institutional or empirical support rather than assuming the missing budget is harmless.
 - For every substitute/complement sign and every prescribed product role, demand at least one internally consistent operational witness. Verify that the same manager can actually switch the roles compared by the theorem and that the example respects availability, timing, ownership, and cost assumptions.
@@ -192,7 +193,7 @@ Use `references/analytical-and-algorithmic-audit.md`.
 - Distinguish a performance guarantee from an implementability or sample-complexity guarantee.
 - Evaluate whether a finite-sample/nonasymptotic bound is actually nontrivial at the paper's numerical scale.
 - Mark proof claims as verified, plausible but unchecked, or suspect; never blur these states.
-- For every lemma or proof device advertised as new, compare its exact assumptions and conclusion with the closest canonical theorem; correctness and proof-technique novelty are separate questions.
+- For a lemma or proof device advertised as a publication-carrying novelty, compare its exact assumptions and conclusion with the closest canonical theorem; correctness and proof-technique novelty are separate questions.
 - For weighted or transformed norms, rewrite the operator as a conjugated matrix and test a noncommuting `2×2` example. Do not infer singular-value or spectral-norm equality from non-orthogonal similarity, which preserves eigenvalues but not generally singular values.
 - Maintain a **complexity-dependency ledger** for every advertised rate: expand dimensions, state/action cardinalities, horizon, coverage/eigenvalue constants, baseline gaps, smoothness constants, and oracle costs. Instantiate these quantities in common tabular, linear, and no-context special cases before judging an improvement.
 
@@ -272,7 +273,7 @@ Use `references/empirical-and-managerial-audit.md`.
 - Judge contribution relative to length; identify results, proof details, simulations, and citations that obscure the central path.
 - Distinguish publication-path architecture from copyediting. Promote only issues that affect fit, interpretation, or whether a revision can converge.
 - When managerial insight relies on an algebraic decomposition, trace each labeled effect from the primitive period-by-period quantities through every regrouping. Confirm that labels such as expansion, substitution, ripple, spillover, or welfare channel remain invariant to the algebra; a correct total expression can still support a misleading mechanism story.
-- Revisit the paper-identity fork after the detailed audit. Check whether section order, main-text evidence, and conclusion are organized around the component that actually survives—decision support, structural insight, or empirical validation.
+- Revisit the paper-identity fork after the detailed audit. Check whether section order, main-text evidence, and conclusion are organized around the component that actually survives—decision support, structural insight, methodological theory, or empirical validation.
 
 ### Phase D — Verify, merge, and promote the idea board
 
@@ -280,29 +281,32 @@ Maintain a **publishable-asset ledger** in parallel with the issue ledger. For e
 
 Use the two-stage funnel in `references/idea-generation-and-promotion.md`. Preserve the broad candidate slate first; then form the report slate from candidates with sufficient manuscript-specific support and material editorial consequence. Keep potential importance separate from evidentiary strength: a potentially controlling but weakly supported idea belongs in the verification queue, not in the major-comment list or recommendation.
 
-For each candidate that survives the initial sweep, record:
+Before closing the candidate slate, run a **MEI balance interrupt**. State, in one or two sentences each, the best current judgment on (a) Motivation and first-order formulation, (b) Execution and end-to-end credibility, and (c) Insight, novelty, and knowledge yield. These judgments need not each become a major comment, but none may be omitted merely because a concrete proof, algebra, or implementation error was found first. A hard error controls only when its reach and repairability make it more consequential than the other paper-level bottlenecks.
+
+Apply two burden-of-proof rules with calibrated wording:
+
+- **First-order application claim:** when the title, motivation, or managerial contribution depends on the focal lever or mechanism being first-order, a clear rival cause/lever plus the manuscript's lack of comparative institutional, empirical, or counterfactual evidence is sufficient to promote the conclusion that first-order status is **not established**. Do not claim that the rival dominates unless evidence supports it. Ask for the comparison that could decide the issue and identify the narrower conditional or theoretical paper that would survive.
+- **Theory/algorithm claim:** when methodological novelty or a theorem/algorithm is supposed to carry the publication case, perform one exact comparison with the closest canonical object or cited predecessor. Match the dimensions that can affect the claimed delta—such as state, action, information, assumptions, policy class, oracle, complexity measure, and guarantee or rate—then isolate `inherited engine -> new obstacle -> resolving step -> consequential delta`. Use cited public works or verified public sources without searching confidential manuscript wording. If the route is secondary, record the comparison burden without expanding it; if exact priority remains unverified, promote a precise question rather than asserting that the result is known.
+
+For fairness, responsibility, safety, or other normative objectives, also run a **generative-premise test** before accepting the penalty or constraint: under a correctly specified baseline objective, why does the motivating disparity or harm arise at all? Determine whether it reflects an omitted cost, constraint, upstream decision, behavioral response, or actual conflict of objectives. This tests the need for the normative intervention without presuming that efficiency automatically supplies fairness.
+
+For each candidate that survives the initial sweep, keep a minimum internal record:
 
 | Field | Requirement |
 |---|---|
-| MEI role | Motivation, Execution, Insight, or cross-cutting |
-| Paper-level gate | Motivation, formulation/lever, novelty, credibility, insight, or claim calibration |
-| Claim at risk | Quote or faithful paraphrase of the manuscript claim |
-| Necessary subclaim | What must be true for the paper-level claim to hold |
-| Location | Section, equation, theorem, figure, table, or page |
-| Evidence and operation | Manuscript anchor plus comparator, counterfactual, derivation, or evidence trace |
-| Current diagnosis | What appears supported, inconsistent, unsupported, or worth testing; distinguish a verified defect from a question |
-| Consequence if sustained | What changes in correctness, novelty, interpretation, implementability, insight, or publication path |
-| Minimum response | Smallest adequate repair, clarification, verification, or claim contraction |
-| Potential importance | P0 controlling, P1 major, P2 secondary, or unclear if sustained |
-| Evidence status and confidence | Verified, strongly supported, plausible route, open question, or withdrawn, with reason |
-| Disconfirmation | What evidence would make the concern disappear |
-| Evidence role | Decisive, corroborating, illustrative, or secondary consequence |
-| Repair scope | Local, section-level, or paper-spine-level |
-| Final disposition | Promote, supporting, hold, or retire; map stable idea IDs to report IDs when promoted |
+| Thesis and role | Stable ID, provisional conclusion, MEI role, and paper-level claim/gate |
+| Anchor and operation | Manuscript location plus the comparator, counterfactual, derivation, or evidence trace |
+| Consequence and response | What changes if sustained and the smallest adequate response or claim contraction |
+| Evidence and disposition | Verified/supported/question/withdrawn; promote/support/hold/retire |
+| Dependency | Root, independent branch, contingent branch, symptom, duplicate, or conflict |
+
+Expand the record with necessary subclaims, disconfirmation, confidence, evidence role, importance class, repair scope, or source-ID mapping only when those fields could change verification, promotion, ordering, recommendation, or a calibration diagnosis. Do not fill a full ledger for settled positive assets, retired duplicates, or clearly secondary points.
 
 Promote an issue to **major** only when it threatens a headline claim, theorem, contribution, identification, practical bridge, strongest insight, or decision recommendation and the evidence supports that wording. Combine symptoms that share one root cause. Keep the final major list small enough that an editor can see the publication path, but never fill a quota. Show the user the strongest reserve ideas rather than silently deleting them.
 
-Use “fatal,” “invalid,” or equivalent language only after verification shows that a necessary headline subclaim fails and no plausible local or section-level repair preserves the core contribution. Missing explanation, external-practice intuition, or a low-confidence concern cannot by itself control the recommendation. Motivation and insight concerns may have P0 potential when a clear rival object or counterfactual makes the publication consequence important, but an unresolved premise remains **Hold** and cannot control the recommendation until the evidence is sufficient. Frame the needed evidence honestly rather than calling it a hard error.
+Use “fatal,” “invalid,” or equivalent language only after verification shows that a necessary headline subclaim fails and no plausible local or section-level repair preserves the core contribution. Missing explanation, external-practice intuition, or a low-confidence concern cannot support a claim that the authors are wrong. It can, however, support a major **not established** judgment when the missing evidence is itself necessary for a title-level first-order, novelty, insight, or application claim and the reviewer supplies a concrete rival object, reduction, or counterfactual. Frame the evidentiary burden and surviving narrower route honestly rather than upgrading uncertainty into a hard error.
+
+Before fixing report order, run a **root-control check**: for each retained idea, ask whether it is (1) the cause of another concern, (2) an independent concern that survives repair of the root, or (3) only a symptom or evidence item. Order roots by their reach across the manuscript contract, not by how easy they were to verify. Do not merge an omitted behavioral recourse into an upstream decision-layer issue when it would remain consequential even after the upstream layer is defended; give it independent status or an explicit branch in the repair path.
 
 Map every promoted issue back to one of the six paper-level dimensions. When several technical findings share an upper-level implication, synthesize them into one spine-level comment—for example, hidden dimensions plus unmatched assumptions may jointly show that result novelty is unestablished. Recompute the overall assessment card after this clustering.
 
@@ -322,22 +326,18 @@ Treat these as judgment prompts, not a numeric score. Promote a candidate only w
 
 Use `assets/sharp-comments-checkpoint.md`. Return:
 
-- a neutral contribution summary;
-- the frozen pre-audit editorial sheet, visibly separated from post-audit adjudication;
-- the seven-sentence editorial-first memo, including the first-order-object judgment and pre-result baseline;
-- the six-dimension paper-level assessment and provisional journal-level judgment;
-- a short result-to-insight ledger for the claimed publication asset;
-- the strongest publishable asset, conditional editorial-merit bottleneck, credibility bottleneck, which one controls, and repairability of the paper spine;
-- the high-recall idea board with visible dispositions;
+- an approval card with a neutral contribution capsule, overall thesis, report role/format, provisional recommendation, and repair posture;
 - a ranked, sufficiently supported retained set of major comments—usually a handful and sometimes only one or two; never fill a quota;
 - each retained comment in **claim → evidence and status → consequence if sustained → proportionate repair or verification request** form;
-- a compact reserve list of high-potential verification routes and lower-priority concerns;
+- a compact reserve list containing the strongest unpromoted alternative routes, especially any important MEI judgment not represented in the retained list;
 - verification limits and confidence;
-- a provisional recommendation.
+- enough supporting analysis to make the overall judgment and ranking intelligible.
 
-The high-recall idea board and promotion board are required checkpoint artifacts. Do not replace them with only the retained major comments, even when the user requests a concise checkpoint; compress their wording instead.
+Maintain a minimum internal trace sufficient to recover the frozen prior, candidate alternatives, promotion rationale, MEI judgments, strongest asset, and controlling bottlenecks. Complete the full candidate board, promotion table, result-to-insight ledger, and six-dimension card for calibration, disputed ranking, or when one of them could change the publication thesis; otherwise do not duplicate stable reasoning. The checkpoint must reveal important alternatives, not every intermediate row.
 
-Then complete the **approval card / proposed report plan** in `assets/sharp-comments-checkpoint.md`. Present that compact card first in the user-facing response; place the longer technical checkpoint after it as supporting detail when useful. Do not make the user design the report from scratch. Every card field must contain one recommended value, `none`, or `blocking—confirmation deferred`. Recommend:
+Use a **sufficiency exit rule** throughout Phases B–E: once the MEI judgments, strongest asset, controlling root(s), important alternatives, repair path, and evidentiary wording are supported, stop adding diagnostics unless another check could change the thesis, ordering, recommendation, or requested repair.
+
+Complete the **approval card / proposed report plan** in `assets/sharp-comments-checkpoint.md`. Present that compact card first in the user-facing response; place only nonduplicative supporting analysis after it when useful. Do not make the user design the report from scratch. Every applicable card field must contain one recommended value, `none`, or `blocking—confirmation deferred`. Recommend:
 
 - the report role, defaulting to referee rather than AE;
 - language, approximate length, delivery format, and one of the standard, concise, issue-led, or dimension-led structures;
@@ -351,15 +351,16 @@ Only sufficiently supported concerns enter the ranked major list. Unresolved hig
 
 ### Phase F — Full referee report
 
-Proceed only after confirmation. Use `assets/full-referee-report.md` and `references/journal-and-decision-calibration.md`.
+Proceed only after confirmation. Use `assets/full-referee-report.md`, `references/report-synthesis-and-style.md`, and `references/journal-and-decision-calibration.md`.
 
 - Lock the confirmed substantive idea set. Do not add a new major objection while polishing; if new evidence materially changes the report, return to Phase E and reconfirm.
 - Translate the internal ledger into author-facing prose. Merge details by root cause and suppress internal labels such as paper-level gate, necessary subclaim, severity, confidence, evidence role, repair scope, and disconfirmation status.
-- Default to the **standard** structure: manuscript title/ID, Summary, Overall Evaluation, numbered Major Comments, optional Other/Minor Comments, optional Conclusion, and References only when external work is actually cited. Use the concise, issue-led, or dimension-led variant when it better matches the confirmed plan or a supplied example.
+- Choose structure from the **topology of the confirmed reasoning**, not by habit. Use standard numbered comments for several independent roots; issue-led prose for one or two paper-spine arguments with many manifestations; dimension-led narrative when Motivation, Model/Analysis, Technical Concerns, and Presentation remain genuinely distinct; concise form for a short report or a separate decision form. Never create empty sections to make the report look complete.
 - Use the Summary to reconstruct the question, model or design, main results, and evidence accurately, emphasizing facts needed for the later assessment rather than copying the abstract.
 - In Overall Evaluation, identify the strongest asset first, then state one central reservation and its journal-level consequence. Include an explicit recommendation only if its visibility was confirmed.
 - Give each major comment a conclusion-bearing title. In two to five connected paragraphs, move from manuscript-specific anchor to comparator, counterfactual, or derivation; explain the upper-level consequence; and make a proportionate request. A spine-level rejection comment need not pretend to have a local repair, but it should state what evidence, result, or repositioning could change the assessment when that is scientifically plausible.
 - Order comments by editorial importance, not manuscript order. Retain only the supported nonredundant set—usually a handful and sometimes only one or two; do not split one root problem into several repetitive comments or fill a quota.
+- Translate every confirmed idea through `root judgment -> strongest manuscript evidence -> publication consequence -> response path`. Do not write a separate abstract paragraph about first-order status and then repeat the same point under every model detail; let the details earn one upper-level conclusion. Conversely, do not bury an independent recourse, comparator, or guarantee-semantic issue as a symptom when it survives repair of the first root.
 - Keep Other/Minor Comments short. Use a Conclusion only to synthesize the strongest asset, decisive bottleneck, and revision path; never introduce a new objection there.
 - Separate comments to authors from confidential comments to the editor when requested. Do not imitate an AE synthesis unless the confirmed role is AE.
 - State verification limits in a natural sentence only when they materially affect interpretation; do not force a standalone audit-style section.
@@ -411,3 +412,4 @@ Use `references/calibration-learning.md` and `assets/calibration-case-template.m
 - Read `references/analytical-and-algorithmic-audit.md` for analytical, optimization, queueing, stochastic-control, or algorithmic papers.
 - Read `references/empirical-and-managerial-audit.md` for experiments, simulations, data applications, or managerial claims.
 - Read `references/calibration-learning.md` when examples include reports, decisions, revisions, or responses.
+- Read `references/report-synthesis-and-style.md` after the user confirms the idea set and before drafting author-facing prose.

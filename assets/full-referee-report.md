@@ -2,7 +2,7 @@
 
 Use only after the proposed report plan has been confirmed. Delete all bracketed instructions and unused optional sections. The delivered author-facing report must contain only polished report prose.
 
-## Default: standard report
+## Standard report scaffold
 
 # Referee Report: “[Manuscript title]”
 
@@ -41,7 +41,7 @@ Use only after the proposed report plan has been confirmed. Delete all bracketed
 ## Structural variants
 
 - **Concise:** title/ID → Summary and Overall Assessment → Major Concerns → Minor Comments. Use for short reports or when the review form separately captures the recommendation.
-- **Standard:** use the numbered structure above. This is the default and best matches a conventional full referee report.
+- **Standard:** use the numbered structure above when several independent major comments need a conventional full referee report.
 - **Issue-led:** title/ID → short opening assessment → substantive thematic headings → optional conclusion. Use when two or three long, paper-spine arguments are clearer than a separate Major Comments container.
 - **Dimension-led narrative:** title/ID → neutral Summary → Evaluation organized under Motivation and Scope, Model and Analysis, Technical Concerns, and Presentation → final Overall Summary. Use for compact reports whose concerns are clearer by assessment dimension than by numbered issue; omit any empty dimension.
 

@@ -46,6 +46,8 @@ Never place confidential case text inside the reusable skill.
 
 Do not begin by merging all reports into issue families. First reconstruct each reviewer as a separate reasoning process:
 
+When files are separate, open and reconstruct all individual referee reports before reading an AE/DE synthesis or decision letter. The synthesis can reveal other reviewers' priorities and anchor the reconstruction. If the order cannot be preserved because sources are bundled, record that exposure in the calibration note; it does not contaminate an already frozen blind review, but it limits claims about independently reconstructing reviewer stances.
+
 1. What does the reviewer accurately summarize and explicitly credit?
 2. Which contribution route do they believe should carry the paper: first-order application object, generative modeling, methodological theory, decision support, empirical validation, or another route?
 3. What is their primary unit of judgment: the real phenomenon, model primitives, theorem ancestry, policy benchmark, evidence chain, or cumulative analytical program?

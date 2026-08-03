@@ -38,6 +38,22 @@ Use one promotion gate throughout: promote only after the operation has been per
 - **Disconfirmation:** Process data or bounded sensitivity analysis shows that realistic recourse is rare or leaves the policy and insight unchanged.
 - **Promotion condition:** Promote when recourse changes the objective, ranking, fairness, or interpretation—not merely aggregate fit.
 
+### Normative intervention versus the baseline that generates the harm
+
+- **Cue:** An observed group disparity, service gap, risk, or access shortfall motivates adding a fairness, safety, or responsibility penalty to an otherwise standard objective.
+- **Operation:** Ask whether a correctly specified baseline optimizer would generate the observed harm under the manuscript's stated shares, revenues, costs, constraints, and information. If not, identify the omitted primitive, upstream decision, nonoptimization, or conflict of objectives that must create it.
+- **Possible finding:** The normative term may address a genuine efficiency–equity conflict, or may compensate for a misspecified baseline whose missing mechanism is itself the first-order research object.
+- **Disconfirmation:** Institutional or empirical evidence shows that the focal baseline decision systematically creates the harm even after the relevant costs, constraints, and upstream choices are represented.
+- **Promotion condition:** Promote when the need for the normative intervention and the paper's causal or managerial spine depend on this generative premise. Do not presume that population weighting or equal-group protection is uniquely correct.
+
+### Multiplicative harm and rival uncertainties
+
+- **Cue:** The operational harm is a product or nonlinear combination of an estimated risk/severity term and a dynamic exposure, volume, duration, or consequence term.
+- **Operation:** Map the uncertainty, update frequency, intervention sensitivity, and policy-ranking sensitivity of each factor separately and jointly. Ask why one factor receives the full stochastic model while another is fixed or known.
+- **Possible finding:** The modeled factor may dominate under a credible institutional separation, or the omitted uncertainty may be equally first-order and change rankings or learning feedback.
+- **Disconfirmation:** Data, process evidence, or sensitivity analysis shows that uncertainty in the fixed factor is small or does not materially change the policy relative to the modeled factor.
+- **Promotion condition:** Promote a first-order positioning burden when the application contribution depends on the chosen uncertainty being primary; a joint replacement model is not automatically required if a narrower theoretical route survives.
+
 ## Execution and credibility examples
 
 ### 4. Guarantee semantics
@@ -55,6 +71,14 @@ Use one promotion gate throughout: promote only after the operation has been per
 - **Possible finding:** The bridge may establish exact or controlled transfer, or reveal that the experiments evaluate a different policy or problem from the one covered by the theorem.
 - **Disconfirmation:** Exact equivalence, a valid approximation bound, or exact-small-instance comparisons connect the implementation to the theoretical object.
 - **Promotion condition:** Promote when the empirical claim relies on the theorem or when the bridge can materially change feasibility, ranking, or performance.
+
+### Noncommuting surrogate transformations
+
+- **Cue:** The implementation moves a scale factor, expectation, clipping/capping operator, normalization, threshold, or nonlinear map outside the theoretical expression.
+- **Operation:** Compare the formulas symbolically, then construct the smallest admissible instance that tests equality and policy ranking. Common checks include whether `a min{b,x}` equals `min{b,ax}` and whether `f(E[X])` equals `E[f(X)]`.
+- **Possible finding:** The surrogate may preserve the theoretical policy under a valid homogeneity or monotonicity argument, or may reverse decisions and become a distinct heuristic.
+- **Disconfirmation:** An algebraic identity, order-preservation theorem, or approximation bound covers the actual parameter range and information set.
+- **Promotion condition:** Promote when the manuscript presents experiments or deployment results as evidence for the analyzed policy, guarantee, or mechanism.
 
 ### 6. Logged data used as an interactive environment
 
@@ -129,6 +153,22 @@ Use one promotion gate throughout: promote only after the operation has been per
 - **Possible finding:** A narrower paper identity and bounded repair path survive even though the original framing does not.
 - **Disconfirmation:** Every candidate asset depends on the disputed spine, or the surviving result is routine relative to the closest work.
 - **Promotion condition:** Always surface the strongest supported surviving core in the checkpoint; let it control repairability and recommendation when it offers a coherent publication path.
+
+### Absorbing-action index ancestry
+
+- **Cue:** Passive action evolves a Markov state while active action terminates, retires, resolves, or permanently absorbs the unit.
+- **Operation:** Map the single-unit Lagrangian problem to retirement/optimal-stopping and Gittins-type constructions; separately map the system policy to Whittle, LP-priority, or related resource-allocation schemes. Distinguish index identity from the novelty of the system-level performance analysis.
+- **Possible finding:** The index may be classical while a new finite-system guarantee, equilibrium argument, or tractable structure remains substantial; alternatively, both policy and guarantee may be inherited under matched assumptions.
+- **Disconfirmation:** A consequential difference survives in ordering, indexability, admissible policies, assumptions, computation, or guarantee.
+- **Promotion condition:** Promote an exact author-facing comparison question whenever the index or policy is a headline contribution, even if literature verification is incomplete; do not guess the answer.
+
+### Main-lemma ancestry
+
+- **Cue:** A new drift, concentration, state-space-collapse, tail, rounding, or approximation lemma is named as a primary technical contribution.
+- **Operation:** Build a compact assumptions/conclusion table against the closest theorem families, including weaker moment, MGF, geometric-tail, or high-probability premises when relevant; identify the exact new obstacle, proof step, and downstream theorem delta.
+- **Possible finding:** The lemma may supply a genuinely weaker assumption or sharper scale essential to the main result, or may repackage a known engine whose standard statement was compared too narrowly.
+- **Disconfirmation:** An assumption-matched comparison establishes a consequential new conclusion or shows why existing results cannot deliver the main theorem.
+- **Promotion condition:** Promote when the lemma carries the paper's theoretical novelty; if sources cannot be verified, request the table rather than alleging prior coverage.
 
 ## Anti-anchoring check
 

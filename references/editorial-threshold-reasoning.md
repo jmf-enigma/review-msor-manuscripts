@@ -59,7 +59,7 @@ After reading the abstract, introduction, institutional description, related-wor
 
 Preserve this **pre-result prior**. Later algebra can make a mechanically expected conclusion look sophisticated. The prior supplies a disciplined baseline for judging surprise and value.
 
-Freeze the prior as a pre-audit editorial artifact before reading proof appendices or searching for errors. It must also contain a conditional-on-correctness publication verdict, the strongest prospective asset, the conditional editorial-merit bottleneck, and one conclusion from each reviewer pass. Do not rewrite this artifact after the technical audit; show post-audit adjudication separately. This prevents a vivid theorem or data error from displacing the distinct question of whether a fully correct paper would make a threshold-clearing contribution.
+Freeze the prior as a pre-audit editorial artifact before reading proof appendices or searching for errors. At minimum it contains a conditional-on-correctness publication verdict, the strongest prospective asset, the conditional editorial-merit bottleneck, the focal first-order object and strongest rival, the closest baseline, and the result that would change the prior. Use the reviewer passes selectively to challenge this map; do not force three repetitive conclusions when the paper does not trigger three distinct routes. Do not rewrite the frozen artifact after the technical audit; show post-audit adjudication separately. This prevents a vivid theorem or data error from displacing the distinct question of whether a fully correct paper would make a threshold-clearing contribution.
 
 If the paper is empirical, replace “qualitative conclusions” with expected signs, mechanisms, heterogeneity, and plausible alternative explanations before reading the estimates.
 
@@ -190,7 +190,7 @@ Judge execution relative to the paper's ambition. A parsimonious proof of a fund
 
 ## 6. Triangulate with three complementary reviewer passes
 
-Run all three passes; do not treat them as fixed reviewer personalities or choose only the one that produces the harshest verdict.
+Use every pass that can challenge the prior through a distinct reasoning route; merge or skip a pass that merely restates an established conclusion. Do not treat the passes as fixed reviewer personalities or choose only the one that produces the harshest verdict.
 
 ### Pass A — Phenomenon-origin and first-order-object pass
 
@@ -271,9 +271,9 @@ Distinguish:
 
 The last category normally cannot support an ordinary revision even when the topic is important and the execution is extensive.
 
-## 10. Required editorial-first memo
+## 10. Editorial-first memo
 
-Before listing proof, computation, or data defects, write seven sentences:
+Before listing proof, computation, or data defects, record the following seven judgments. A seven-sentence memo is a useful default, but combine related judgments when the prose would otherwise repeat itself; completeness of thought matters more than sentence count.
 
 1. Judge the consequential problem, its evidence, and why solving it matters.
 2. State the selected research object and its strongest first-order rival.
@@ -283,7 +283,7 @@ Before listing proof, computation, or data defects, write seven sentences:
 6. Judge the execution's rigor, depth, completeness, and end-to-end closure—not merely the presence or absence of errors.
 7. Name the publishable core, both bottlenecks, which controls, repair scope, and provisional journal-level implication.
 
-Sentence 7 must name both the conditional editorial-merit bottleneck and the post-audit credibility bottleneck, then state which controls. If either is absent, the memo is incomplete.
+The synthesis must name both the conditional editorial-merit bottleneck and the post-audit credibility bottleneck, then state which controls. If either is absent, the memo is incomplete.
 
 If any sentence can only be filled with “unclear,” convert that uncertainty into a specific evidence request rather than a generic criticism.
 

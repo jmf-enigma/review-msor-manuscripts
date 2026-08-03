@@ -30,23 +30,17 @@ Seek coverage across the dependent MEI chain:
 
 Also include at least one candidate about the paper's positive core and repair path. These are coverage prompts, not mandatory criticisms.
 
-For each candidate, record:
+For each candidate, keep the smallest trace that preserves the idea and why it matters:
 
 | Field | Requirement |
 |---|---|
-| ID and provisional thesis | State the possible paper-level point in one sentence |
-| MEI role | Motivation / Execution / Insight / cross-cutting |
-| Stance | Publishable asset / concern / boundary / opportunity / verification route |
-| First-order object or claim | Decision, mechanism, theorem, estimand, policy class, evidence route, or contribution being judged |
-| Trigger and anchor | Manuscript cue, location, claim, or object |
-| Operation | Comparator, canonical reduction, counterfactual, derivation, boundary test, or evidence trace |
-| Potential consequence | What readers, editors, or decision makers would believe differently if the idea is sustained |
-| Evidence state | Verified / strongly supported / plausible route / open question / withdrawn |
-| Needed check | Literature, proof, data, computation, institutional evidence, or none |
-| Disconfirmation | What result, definition, evidence, or comparison would materially weaken the idea |
-| Repair scope | Clarification, existing-analysis repair, bounded new result/evidence, claim redesign, or no credible in-paper repair |
-| Dependencies | Root cause, supporting symptom, duplicate, or conflict with another candidate |
-| Stage-1 status | Candidate / needs verification / supporting or duplicate / withdrawn |
+| ID, thesis, and MEI role | State the possible paper-level point in one sentence and its route |
+| Trigger, anchor, and operation | Manuscript cue/location plus comparator, counterfactual, derivation, boundary test, or evidence trace |
+| Potential consequence | What readers, editors, or decision makers would believe differently if sustained |
+| Evidence and next step | Verified/supported/question/withdrawn plus the one check that could resolve it |
+| Dependency/status | Root, independent, contingent, symptom, duplicate, conflict; candidate/support/hold/withdraw |
+
+Add disconfirmation, repair scope, confidence, stance, or fuller claim decomposition only for candidates whose promotion or wording is genuinely uncertain. The board is a memory and comparison device, not a form-completion target.
 
 Do not discard a candidate merely because:
 
@@ -91,11 +85,24 @@ Keep three judgments orthogonal.
 
 Do not compute a mechanical score or require a fixed number in each class. A candidate may have **P0 potential** but remain **Hold** because its evidence needs a targeted check. Recommend the smallest nonredundant, sufficiently supported P0/P1 set that explains the publication path, while showing the user the strongest held and supporting ideas so that a valid alternative route is not silently lost.
 
+Stop deepening the board once the MEI judgments, strongest asset, controlling root(s), important alternatives, and realistic repair path are supported. Run another diagnostic only if it could change verification, promotion, report order, recommendation, or the requested repair.
+
+Before ordering, distinguish:
+
+- **root:** creates or controls other concerns and determines paper identity or repair scope;
+- **independent branch:** remains consequential after the root is repaired;
+- **contingent branch:** matters only if the current paper spine is retained;
+- **symptom/evidence:** helps establish another diagnosis but should not become its own major comment.
+
+The first major comment should normally instantiate the controlling root named in the overall thesis. Depart from that order only when an independent issue more directly invalidates the central contribution.
+
 ### Promotion guardrails
 
 - A high-confidence **fatal correctness or identification claim** requires a verified derivation, counterexample, contradiction, or design failure. Otherwise phrase it as a question or verification route.
 - A **Motivation or Insight judgment** may be important before it is mathematically falsified. State the rival object, counterfactual, missing evidence, and conditional consequence rather than pretending it is a hard error.
-- A detailed flaw does not automatically control the recommendation. Test whether the strongest asset survives through claim contraction, repositioning, compression, or bounded repair.
+- A detailed flaw does not automatically control the recommendation. Rank importance separately from evidentiary certainty and rerun the paper-identity deletion test: if correcting or deleting the affected route leaves the strongest asset intact, the flaw may be major without controlling the paper.
+- Do not let a verified error in a secondary application, heuristic, or experiment displace an unresolved first-order or ancestry question about the primary contribution. Conversely, do not demote a verified bridge error when the paper explicitly makes that bridge indispensable to its claim to fame.
+- A precise equivalence, subsumption, or matched-result question may be promoted when manuscript-internal mapping shows that the answer changes contribution identity, even if external priority cannot yet be verified. Phrase the author burden accurately; do not assert that the result is known.
 - An issue that was generated but left in reserve is a **promotion problem**, not a discovery failure. Record the distinction.
 - Preserve alternative valid comments. Historical reviewer agreement is evidence of relevance, not the definition of relevance.
 

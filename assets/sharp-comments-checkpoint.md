@@ -11,7 +11,7 @@
 
 ## Approval card — proposed report plan
 
-Fill this card only after completing the analysis below, but present it first to the user. It is a recommended, self-contained plan rather than a blank questionnaire. Every field must contain one selected value, `none`, or `blocking—confirmation deferred`.
+Fill this card only after completing the analysis below, but present it first to the user. It is a recommended, self-contained plan rather than a blank questionnaire. Fill the applicable fields; omit nonblocking metadata that the user does not need to confirm.
 
 ### Decision and delivery
 
@@ -26,7 +26,7 @@ Fill this card only after completing the analysis below, but present it first to
 
 ### Opening-thesis preview
 
-In two or three content-level sentences—not polished final-report prose—state:
+First give a two- to four-sentence neutral contribution capsule covering the question, method, main result, and evidence. Then, in two or three content-level sentences—not polished final-report prose—state:
 
 1. the strongest publishable asset;
 2. the best-supported central reservation, or the leading unresolved question if a blocking check remains;
@@ -34,11 +34,11 @@ In two or three content-level sentences—not polished final-report prose—stat
 
 ### Retained report ideas
 
-| Report ID | Source idea ID(s) | Proposed author-facing diagnostic title | One-sentence paper-level point | Key manuscript anchors | Evidence status/confidence | Exact author request or outcome that could change the assessment | Verify before drafting? |
-|---|---|---|---|---|---|---|---|
-| M1 | I# |  |  |  |  |  |  |
+| Report ID | Diagnostic title and paper-level point | Key anchor and evidence status | Author request or decision-relevant question |
+|---|---|---|---|
+| M1 |  |  |  |
 
-List only the sufficiently supported major comments recommended for the report, usually a handful and sometimes only one or two, in proposed order. Do not fill a quota. Assign retained other/minor points IDs such as O1 and O2. State which checkpoint candidates were merged, demoted, or dropped.
+List only the sufficiently supported major comments recommended for the report, usually a handful and sometimes only one or two, in proposed order. Do not fill a quota. Put source-ID mappings, confidence fields, and detailed disconfirmation checks in the internal promotion record unless the user needs them to decide. Assign retained other/minor points IDs such as O1 and O2. State only material merges, demotions, or drops.
 
 ### Reserve ideas surfaced for user choice
 
@@ -57,11 +57,15 @@ Include the strongest unpromoted ideas so the user can see what was considered a
 - Blocking checks:
 - Nonblocking verification limits:
 
-If any row says `Verify before drafting? = yes` or any blocking check remains, “confirm” authorizes that check but does not authorize report drafting until it clears. Reconfirm only if the result materially changes the thesis, retained ideas, order, requests, or recommendation.
+If any blocking check remains, “confirm” authorizes that check but does not authorize report drafting until it clears. Reconfirm only if the result materially changes the thesis, retained ideas, order, requests, or recommendation.
 
 ### Substantive lock and confirmation
 
 State that the full report will use only this thesis and the listed M/O ideas. Ask the user to reply “confirm” / “按这个写,” or request changes by field name or comment ID: merge, deepen, test, drop, reframe, or reorder. Do not draft the full report before that response.
+
+## Supporting audit appendix — internal by default
+
+Keep this appendix for calibration, disputed rankings, or a user request to see the full reasoning. A normal sharp-comments checkpoint may stop after the approval card, retained ideas, reserve ideas, verification limits, and confirmation request. Do not expose repeated tables merely to demonstrate effort.
 
 ## Contribution in neutral terms
 
@@ -69,7 +73,7 @@ State the operational question, method, main result, evidence, and claimed impli
 
 ## High-recall sharp-idea board
 
-**Required in every sharp-comments checkpoint.** Complete this board after the first full read and before fixing the final major-comment set. Preserve every genuinely distinct positive asset, concern, boundary, opportunity, comparator route, and sharp question; stop when additional candidates are duplicative or immaterial rather than targeting a count. A concise output may shorten each cell but may not omit the board.
+Complete this board internally after the first full read and before fixing the final major-comment set. Preserve every genuinely distinct positive asset, concern, boundary, opportunity, comparator route, and sharp question; stop when additional candidates are duplicative or immaterial rather than targeting a count. Display it only when its breadth or a disputed promotion decision matters to the user.
 
 | ID | Candidate thesis | MEI role | First-order object / claim | Trigger / manuscript anchor | Comparator, counterfactual, or test | Consequence if sustained | Evidence state | Needed check / disconfirmation | Stage-1 status |
 |---|---|---|---|---|---|---|---|---|---|
@@ -79,7 +83,7 @@ Use `references/idea-generation-and-promotion.md`. Keep potential importance sep
 
 ## Promotion board
 
-**Required in every sharp-comments checkpoint.** Keep importance, evidence, and disposition in separate columns. A concise output may shorten rationales but may not replace this board with only the final M-list.
+Keep importance, evidence, and disposition distinct in the internal record. Display this board for calibration, audit, or a ranking dispute; otherwise summarize the decisive promotions and strongest holds in the approval card and reserve list.
 
 | Idea ID | Current diagnosis | Paper-level gate / contract reach | Importance class | Why this outranks or supports alternatives | Evidence verdict | If repaired, what remains? | Final disposition / report mapping |
 |---|---|---|---|---|---|---|---|
@@ -89,7 +93,7 @@ State explicitly whether any important idea was generated but not promoted, and 
 
 ## Frozen pre-audit editorial sheet
 
-Complete this after the introduction, institutional setting, closest-literature claim, and model/design, but before opening proof appendices or hunting for technical errors. Preserve it unchanged; put corrections in the post-audit section.
+Complete the minimum prior after the introduction, institutional setting, closest-literature claim, and model/design, but before opening proof appendices or hunting for technical errors. Preserve it unchanged; put corrections in the post-audit section. Fill only diagnostic modules that the manuscript triggers; do not add `N/A` rows.
 
 ### Conditional-on-correctness verdict
 
@@ -98,9 +102,9 @@ Complete this after the introduction, institutional setting, closest-literature 
 - Strongest prospective asset:
 - Conditional editorial-merit bottleneck (motivation, first-order object, novelty, or insight only):
 
-### Outside-view cue menu
+### Selective outside-view cue menu
 
-Complete the rows triggered by the manuscript, mark others `N/A` with a reason, and add manuscript-specific tests. These cues may reflect prior calibration cases; they are not journal standards, mandatory criticisms, or a completeness checklist.
+Complete only rows triggered by the manuscript and capable of changing the editorial prior; delete the rest. Add manuscript-specific tests. These cues may reflect prior calibration cases; they are not journal standards, mandatory criticisms, or a completeness checklist.
 
 | Operation | Manuscript cue | Explicit comparison or mapping | What survives / provisional conclusion |
 |---|---|---|---|
@@ -111,15 +115,17 @@ Complete the rows triggered by the manuscript, mark others `N/A` with a reason, 
 | Claimed theorem/rate/lemma ancestry, when triggered |  | Known engine -> new obstacle -> resolving step -> consequential delta |  |
 | Pre-result baseline |  | Conclusions implied by assumptions and closest standard model |  |
 
-### Three independent pre-audit pass conclusions
+### Selective pre-audit pass conclusions
 
-- Phenomenon-origin / first-order-object pass:
-- Prescriptive-closure pass:
-- Generative-model / knowledge-yield pass:
+Record only passes that produce distinct information; merge repeated conclusions.
+
+- Phenomenon-origin / first-order-object pass, when triggered:
+- Prescriptive-closure pass, when triggered:
+- Generative-model / knowledge-yield pass, when triggered:
 
 ## Editorial-first memo
 
-Write the seven sentences required by `references/editorial-threshold-reasoning.md`. Preserve the pre-result baseline and state explicitly:
+Write a compact memo. Use seven sentences when that format prevents omission, but combine noncontroversial items rather than repeating the same thesis. Preserve the pre-result baseline and state explicitly:
 
 - motivation judgment and concrete stakes;
 - first-order-object judgment: operationally first-order / theoretically first-order / conditionally first-order / secondary-wrong-layer;
