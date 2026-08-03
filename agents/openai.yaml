@@ -1,0 +1,4 @@
+interface:
+  display_name: "MS/OR Referee Review"
+  short_description: "Generate and prioritize sharp MS/OR review ideas"
+  default_prompt: "Use $review-msor-manuscripts to generate a broad sharp-idea board for this authorized paper, verify or disconfirm the candidates, prioritize the most important supported comments, and ask me to confirm the report plan before drafting."
