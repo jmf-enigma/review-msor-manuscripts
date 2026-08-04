@@ -121,6 +121,8 @@ State the burden of proof. Do not convert “the paper omitted feature X” into
 
 For every newly named model or problem class, first complete an explicit canonical-reduction table covering context, state, action, timing/information, objective, feasible policies, and complexity. A theoretically important topic is not enough to establish a theoretically first-order *new object*. Identify the exact structure, rate, computation, or guarantee that cannot be obtained after reduction to the closest standard model. If no consequential delta survives, classify the contribution as a structured special case, algorithmic result, or combination rather than a new model class.
 
+Before accepting the manuscript's terminology, translate the object into at least two plausible classical structures or information patterns. Use this anti-framing step to discover the closest canonical object, rival mechanism, and adjacent vocabulary; it is a discovery device, not a demand that both translations be correct. Retain the translation that best preserves state, action, timing, information, objective, and feasible policies, and state what fails to carry over.
+
 Whenever a failure, stockout, rejection, service denial, or unavailable choice is part of the model, enumerate downstream recourse before closing the first-order judgment. Promote the omitted response most likely to change objective value, policy/ranking, or distributional effects; do not leave it in a generic realism inventory.
 
 ## 4. Judge whether the result and insight clear the journal threshold

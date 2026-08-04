@@ -1,5 +1,13 @@
 # Sharp-Idea Generation and Promotion
 
+## Contents
+
+1. Build a high-recall idea board
+2. Promote by importance and evidence
+3. Apply root-control and promotion guardrails
+4. Present the confirmation checkpoint
+5. Calibrate discovery and promotion
+
 ## Purpose
 
 Separate two different review abilities:
@@ -29,6 +37,8 @@ Seek coverage across the dependent MEI chain:
 - **Insight:** pre-result baseline, surviving non-obvious delta, mechanism, regime boundary, decision/belief change, strongest asset.
 
 Also include at least one candidate about the paper's positive core and repair path. These are coverage prompts, not mandatory criticisms.
+
+Maintain a **publishable-asset ledger** beside the issue board. For each serious positive candidate, record the result or design, why the object is first-order or appropriately scoped, what was predictable beforehand, the surviving non-obvious delta, execution evidence, the decision or belief consequence, and its boundary. Do not let a longer defect list erase a shorter but decisive positive asset.
 
 For each candidate, keep the smallest trace that preserves the idea and why it matters:
 
@@ -61,6 +71,7 @@ Promotion is a comparative judgment. For every serious candidate ask:
 4. **Distinctiveness:** Does it add a different root diagnosis, or merely repeat another issue's symptoms?
 5. **Editorial consequence:** Does it change contribution, credibility, interpretation, recommendation, or repair scope?
 6. **Repair consequence:** Can the concern be answered locally, by bounded repositioning or extension, or only by replacing the paper spine?
+7. **Answerability:** Could the authors identify the required evidence, comparison, derivation, or claim change without guessing what the reviewer means?
 
 Keep three judgments orthogonal.
 
@@ -103,6 +114,9 @@ The first major comment should normally instantiate the controlling root named i
 - A detailed flaw does not automatically control the recommendation. Rank importance separately from evidentiary certainty and rerun the paper-identity deletion test: if correcting or deleting the affected route leaves the strongest asset intact, the flaw may be major without controlling the paper.
 - Do not let a verified error in a secondary application, heuristic, or experiment displace an unresolved first-order or ancestry question about the primary contribution. Conversely, do not demote a verified bridge error when the paper explicitly makes that bridge indispensable to its claim to fame.
 - A precise equivalence, subsumption, or matched-result question may be promoted when manuscript-internal mapping shows that the answer changes contribution identity, even if external priority cannot yet be verified. Phrase the author burden accurately; do not assert that the result is known.
+- For a title-level **first-order application claim**, a concrete rival cause or lever plus the manuscript's lack of comparative institutional, empirical, or counterfactual evidence can support the conclusion that first-order status is **not established**. Do not claim that the rival dominates without evidence. Name the comparison that could decide the issue and the narrower conditional or theoretical contribution that would survive.
+- When a theorem or algorithm carries the publication case, perform one exact comparison with the closest canonical object or cited predecessor. Match state, action, information, assumptions, policy class, oracle, complexity measure, and guarantee or rate as applicable; then isolate `inherited engine -> new obstacle -> resolving step -> consequential delta`. If external priority remains unresolved, promote a precise author-facing comparison question rather than guessing.
+- For a normative penalty or constraint, test the premise that the baseline system actually generates the motivating harm and identify the omitted cost, constraint, upstream decision, behavior, or objective conflict responsible. Promote the point only when this premise affects the need for, interpretation of, or policy induced by the intervention.
 - An issue that was generated but left in reserve is a **promotion problem**, not a discovery failure. Record the distinction.
 - Preserve alternative valid comments. Historical reviewer agreement is evidence of relevance, not the definition of relevance.
 

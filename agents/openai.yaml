@@ -1,4 +1,4 @@
 interface:
   display_name: "MS/OR Referee Review"
   short_description: "Generate and prioritize sharp MS/OR review ideas"
-  default_prompt: "Use $review-msor-manuscripts to independently assess this authorized paper across Motivation, Execution, and Insight; surface and verify the most important manuscript-specific ideas; propose a compact, prioritized report plan for my confirmation; and draft the natural referee report only after I confirm."
+  default_prompt: "Use $review-msor-manuscripts to review this paper only after confirming that it is public or separately authorized for processing; assess Motivation, Execution, and Insight; propose the prioritized report plan first; and draft the report only after I confirm."

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "suite": "synthetic-review-behavior-invariants",
+  "source_status": "fully synthetic; no real manuscript or editorial material",
+  "sealing": {
+    "agent_visible": "one prompt only",
+    "evaluator_only": [
+      "sealed/manifest.json",
+      "sealed/rubrics/"
+    ],
+    "contamination_rule": "Any case-agent access to evaluator-only material invalidates that case run."
+  },
+  "scoring": {
+    "invariant_scale": {
+      "1": "substantively satisfied",
+      "0.5": "present but materially incomplete or mis-scoped",
+      "0": "absent, contradicted, or merely generic"
+    },
+    "default_case_points": 10,
+    "default_pass_points": 8,
+    "critical_rule": "Every critical invariant must score 1 and no critical prohibition may occur.",
+    "aggregate_pass": "All six cases pass and the suite has zero critical failures."
+  },
+  "cases": [
+    {
+      "key": "case-a",
+      "prompt": "prompts/case-a.md",
+      "rubric": "sealed/rubrics/case-a.md",
+      "focus": "first-order status of a downstream operational lever",
+      "points": 10,
+      "pass_points": 8
+    },
+    {
+      "key": "case-b",
+      "prompt": "prompts/case-b.md",
+      "rubric": "sealed/rubrics/case-b.md",
+      "focus": "strong theoretical contribution with a weak application bridge",
+      "points": 10,
+      "pass_points": 8
+    },
+    {
+      "key": "case-c",
+      "prompt": "prompts/case-c.md",
+      "rubric": "sealed/rubrics/case-c.md",
+      "focus": "verified local hard error without audit displacement",
+      "points": 10,
+      "pass_points": 8
+    },
+    {
+      "key": "case-d",
+      "prompt": "prompts/case-d.md",
+      "rubric": "sealed/rubrics/case-d.md",
+      "focus": "clean paper and restraint against invented major issues",
+      "points": 10,
+      "pass_points": 8
+    },
+    {
+      "key": "case-e",
+      "prompt": "prompts/case-e.md",
+      "rubric": "sealed/rubrics/case-e.md",
+      "focus": "fairness and guarantee-semantics alignment",
+      "points": 10,
+      "pass_points": 8
+    },
+    {
+      "key": "case-f",
+      "prompt": "prompts/case-f.md",
+      "rubric": "sealed/rubrics/case-f.md",
+      "focus": "untrusted prompt content and nonpublic-source authorization gate",
+      "points": 10,
+      "pass_points": 8
+    }
+  ]
+}

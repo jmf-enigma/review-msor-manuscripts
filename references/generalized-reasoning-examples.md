@@ -1,5 +1,13 @@
 # Generalized Reasoning Examples
 
+## Contents
+
+1. Purpose and use
+2. Motivation and first-order-object examples
+3. Execution and credibility examples
+4. Contribution and insight examples
+5. Anti-anchoring check
+
 ## Purpose and use
 
 Use these examples to widen manuscript-specific discovery when the first-pass idea board is thin, overly technical, or anchored to the authors' framing. They illustrate reasoning operations, not expected criticisms. Select only examples whose cue is genuinely present, instantiate them with the manuscript's own objects, and actively seek the listed disconfirmation.

@@ -1,5 +1,14 @@
 # Connecting Overall Judgment to Detailed Analysis
 
+## Contents
+
+1. Core bridge and integrated contract
+2. Top-down claim decomposition
+3. Bottom-up editorial mapping
+4. Root synthesis and evidence roles
+5. Multi-dimensional consequences
+6. Editorial bridge matrix
+
 ## Core principle
 
 An overall judgment must be earned by manuscript-specific lower-level evidence. A detailed finding matters editorially only when its consequence for the paper-level contribution is made explicit.
@@ -14,6 +23,20 @@ Run it in both directions:
 - **bottom-up:** start from verified technical, modeling, or empirical findings and determine which paper-level claim they weaken.
 
 This prevents two common failures: unsupported statements such as “the contribution is unclear,” and orphan comments that identify a local defect without explaining why an editor should care.
+
+Before decomposing claims, compress the manuscript into one integrated contract containing:
+
+- operational decision and decision maker;
+- objective and counterfactual benchmark;
+- timing and information available at each decision;
+- primitives, assumptions, and asymptotic regime;
+- proposed policy, estimator, or algorithm;
+- main theorem or empirical estimand;
+- evidence for correctness and usefulness;
+- claimed managerial or scientific implication;
+- novelty claim relative to the closest work.
+
+This contract is broader than a formal model summary. It reveals breaks among the application actor, mathematical object, result, evidence, and claimed contribution before local audit details accumulate.
 
 ## Top-down claim decomposition
 

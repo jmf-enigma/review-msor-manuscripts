@@ -1,5 +1,14 @@
 # Empirical, Computational, and Managerial Audit
 
+## Contents
+
+1. Evidence purpose and first-order mechanism
+2. Operational cause, recourse, and application witnesses
+3. Data provenance and counterfactual environments
+4. Baselines, simulations, and uncertainty
+5. Metric and robustness audits
+6. Managerial and estimate-compute-act closure
+
 ## Identify what the evidence is meant to establish
 
 Label each study component as evidence for one or more of:
@@ -37,6 +46,10 @@ Write the application chain before evaluating the proposed policy:
 For every state declared exogenous, ask who chose it, at what stage, under which objective, whether it evolves after action, and whether the modeled decision is organizationally separable from it. A downstream policy can be a useful mitigation without being the root-cause solution, but the paper must measure or bound that role.
 
 Create a feature-budget table with columns for modeled/omitted status, empirical magnitude, expected policy sensitivity, technical complexity devoted, and tractability cost. Escalate when the paper omits a strongly evidenced first-order mechanism while spending most of its analytical budget on a weakly evidenced secondary mechanism.
+
+For each distinct headline mechanism or prescribed role whose feasibility carries an application claim, build one concrete **operational witness**. Record the actual decision maker, timing, authority, action feasibility, availability, individual versus aggregate consumption, joint consumption, continued access, scarce resource or soft budget, and cost. One witness may cover several regimes with the same semantics. A mathematically admissible regime without such a witness supports conditional theory, not a broad application claim.
+
+When consumers or entities can use continuous quantities across products or services, run a **resource-conservation and aggregation test**. Identify what limits time, attention, money, visits, or total usage; distinguish a hard budget from diminishing marginal utility; separate one entity's joint consumption from aggregate demand across heterogeneous entities; and verify that the period length makes simultaneous positive quantities meaningful.
 
 ## Behavioral recourse after failure
 

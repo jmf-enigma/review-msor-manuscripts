@@ -1,5 +1,15 @@
 # Overall Editorial Assessment for MS/OR Papers
 
+## Contents
+
+1. Paper-level value chain
+2. Six assessment dimensions
+3. Overall assessment card and MEI interrupt
+4. Judgment anchors and evidence tests
+5. Mixed-strength aggregation
+6. Detail-to-judgment synthesis
+7. Recommendation gates and paragraph template
+
 ## Why this comes before detailed comments
 
 A referee report is not a list of defects. It is an overall judgment about whether the manuscript turns an important question into a distinct, credible, and useful contribution at the target journal.
@@ -45,6 +55,8 @@ and the canonical-reduction test. The goal is not to demand an unlimited model; 
 
 For each major parameter regime or prescribed product/service role, require an **operational witness**: a concrete setting in which the stated decision maker can take the action, the period length makes the modeled joint behavior feasible, unavailable products are actually unavailable, and the assumed cost or resource constraint is the relevant one. A regime can be mathematically coherent yet lack application support.
 
+For fairness, safety, access, responsibility, or another normative intervention, also run a **generative-premise test**: under a correctly specified baseline objective, why does the motivating harm arise at all? Identify the omitted cost, constraint, upstream decision, behavioral response, or genuine objective conflict that generates it. This does not presume that efficiency supplies fairness; it tests whether the intervention addresses the source of the stated problem rather than penalizing a downstream symptom.
+
 ### 3. Contribution, originality, and result novelty
 
 First state the intended claim to fame in one sentence. A strong claim is:
@@ -69,6 +81,8 @@ Then write:
 `known engine → model-specific obstacle → new technical or empirical step → resulting delta`
 
 Check result novelty under matched assumptions and common special cases. A new acronym, first combination, better-looking exponent, or hidden-dimension bound is not enough by itself.
+
+Identify closest work by **problem, method, and result**, not only by the manuscript's preferred construct name. When verification is needed, route through distinct vocabularies: the application construct, mathematical control structure, information structure, and proof engine. Verify consequential priority claims against primary sources and follow `untrusted-source-and-search-safety.md`; do not disclose nonpublic manuscript-specific wording or infer novelty from an unsuccessful quick search.
 
 Two decisive counterfactuals are:
 
@@ -127,7 +141,7 @@ Ask:
 - Is the closest literature organized around the actual claim to fame?
 - Is the contribution visible relative to manuscript length, or buried under standard machinery, secondary extensions, and application detail?
 
-Also classify the paper's primary identity: **decision-support method**, **structural/managerial insight**, or **empirically validated fact/intervention**. Each identity has a different minimum evidence standard. If the manuscript mixes them, identify which one remains after removing standard computation, model-internal counterfactuals, and narrow special cases; section order and conclusions should be organized around that surviving asset.
+Also classify the paper's primary identity: **decision-support method**, **structural/managerial insight**, **methodological OR theory**, or **empirically validated fact/intervention**. Each identity has a different minimum evidence standard. If the manuscript mixes them, identify which one remains after removing standard computation, model-internal counterfactuals, and narrow special cases; section order and conclusions should be organized around that surviving asset.
 
 Claim contraction can repair a scope failure. It cannot repair the absence of a consequential contribution.
 
@@ -154,6 +168,14 @@ Then state:
 - **whether each bottleneck is local, section-level, or paper-spine-level;**
 - **smallest scientifically adequate publication path;**
 - **provisional recommendation and confidence.**
+
+Before closing the assessment, run a **MEI balance interrupt**. State the best current judgment in one or two sentences each on:
+
+- Motivation and first-order formulation;
+- Execution and end-to-end credibility;
+- Insight, novelty, and knowledge yield.
+
+None of these judgments must become its own major comment. None may disappear merely because a concrete proof, algebra, data, or implementation error was easier to verify. Let a hard error control only when its reach and repairability make it more consequential than the other paper-level bottlenecks.
 
 ## Judgment anchors: what counts as good or bad
 
