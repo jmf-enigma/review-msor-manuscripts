@@ -1,5 +1,15 @@
 # Analytical and Algorithmic Audit
 
+## Contents
+
+1. Reconstruct the formal contract
+2. Assumptions and guarantee semantics
+3. Theorem and proof-method audit
+4. Scaling and matched-rate claims
+5. Algorithm and feasible-set audit
+6. Algebraic bridges and counterexamples
+7. Optimality and mechanism benchmarks
+
 ## Reconstruct before checking
 
 Write a compact formal contract:
@@ -14,6 +24,8 @@ Write a compact formal contract:
 - algorithm inputs and computational operations.
 
 Many sharp comments arise from two individually reasonable definitions that do not match across sections.
+
+Verify that every application variable exists in the formal state and information set at the time it is used. Compare common-root versus heterogeneous arrivals, stationary versus finite-horizon operation, exact primitives versus learned proxies, and identical service abstractions versus operational heterogeneity whenever those distinctions can change feasibility, ordering, or guarantees.
 
 ## Assumption-to-use table
 
@@ -159,6 +171,21 @@ Whenever theory becomes a heuristic:
 - check whether a global dual price becomes job-specific after rescaling;
 - build a two-job numeric example to test whether rankings reverse.
 
+## Counterexample and limiting-case engine
+
+Choose only the high-yield tests for the disputed central formula, theorem, or interpretation:
+
+- zero, infinity, scarce capacity, abundant capacity, one state, one job, or deterministic transitions;
+- two objects differing in one primitive;
+- heterogeneous scaling of a probability, cost, reward, or service time;
+- swapping expectation with a nonlinear map;
+- an allowed zero-probability or zero-cost boundary despite an interior argument;
+- the smallest instance with an exactly computable optimum;
+- an adversarial but admissible instance;
+- dimensional analysis and monotonicity.
+
+Use a counterexample to isolate the exact subclaim that fails and the smallest repair. Do not manufacture pathology or let a local counterexample erase a distinct surviving contribution.
+
 ## Optimality and mechanism benchmarks
 
 Whenever feasible, request or construct:
@@ -169,5 +196,7 @@ Whenever feasible, request or construct:
 - canonical policy under special cases;
 - ablation isolating the proposed mechanism;
 - scaling plots in the parameters appearing in the theorem.
+
+When the paper optimizes a fixed-frequency, fixed-fraction, threshold, cyclic, index, or other restricted policy while defining a less restricted optimum, compare the restricted value with the unrestricted benchmark on exact small instances, by a bound, or through a clearly justified institutional constraint. Practical simplicity can justify the class; it cannot silently convert within-class optimality into unrestricted optimality guidance.
 
 These comparisons determine whether performance comes from the theorem's mechanism or from a favorable implementation choice.

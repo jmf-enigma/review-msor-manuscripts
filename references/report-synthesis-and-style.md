@@ -1,5 +1,15 @@
 # Report Synthesis and Style
 
+## Contents
+
+1. Lock confirmed substance
+2. Choose architecture from issue topology
+3. Write the publication thesis
+4. Build and order root-chain comments
+5. Calibrate evidence language and MEI integration
+6. Use technical detail selectively
+7. Close and verify the report
+
 ## Purpose
 
 Turn a confirmed MS/OR idea set into a natural referee report. The internal review may use ledgers, severity classes, counterfactuals, and audit tables; the author-facing document should sound like one informed scholar explaining a coherent judgment to other scholars.

@@ -1,5 +1,14 @@
 # Journal and Decision Calibration
 
+## Contents
+
+1. Management Science lens
+2. Operations Research lens
+3. Area-sensitive contribution routes
+4. Decision logic and labels
+5. Recommendation consistency
+6. Report architecture
+
 ## Management Science lens
 
 The current [Management Science editorial statement](https://pubsonline.informs.org/page/mnsc/editorial-statement) and [submission guidelines](https://pubsonline.informs.org/page/mnsc/submission-guidelines) characterize the journal as publishing rigorous, original scientific research on the practice of management. A regular paper should address issues important to managers and executives, interest a wide segment of the management-science community, have potential to affect management practice, and make a contribution commensurate with its length. Apply the journal-wide standard first and the relevant department statement second.

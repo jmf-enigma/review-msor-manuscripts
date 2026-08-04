@@ -1,0 +1,37 @@
+name: Feature request
+description: Suggest a general improvement without sharing review material
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Privacy notice
+        Do not upload, paste, quote, or link any manuscript, referee report, decision letter, author response, personal information, or confidential case material. State the general need using public or synthetic examples only; redact names, IDs, email addresses, and local paths.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I confirm this issue contains only public or synthetic material and no confidential material or personal information.
+          required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: General need
+      description: Explain the reusable workflow gap without describing a private case.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe a general solution and, if useful, a synthetic example.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional; do not include real review material.

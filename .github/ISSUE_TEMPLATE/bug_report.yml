@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a reproducible problem using only public or synthetic material
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Privacy notice
+        Do not upload, paste, quote, or link any manuscript, referee report, decision letter, author response, personal information, or confidential case material. Use a minimal synthetic example and redact local paths, names, IDs, email addresses, and other identifiers.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I confirm this issue contains only public or synthetic material and no confidential material or personal information.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the behavior without quoting or attaching source material.
+      placeholder: A concise, de-identified description of the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Synthetic reproduction
+      description: Give minimal synthetic steps. Do not include real paper text, metadata, paths, or files.
+      placeholder: "1. Start with a synthetic example..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
