@@ -28,6 +28,7 @@ OPENAI_YAML_INTERFACE_FIELDS = {
 }
 OPENAI_YAML_POLICY_FIELDS = {"allow_implicit_invocation"}
 OPENAI_YAML_SKILL_TOKEN = "$review-msor-manuscripts"
+OPENAI_YAML_ALLOW_IMPLICIT_INVOCATION = True
 
 REQUIRED_RELEASE_FILES = {
     ".github/ISSUE_TEMPLATE/bug_report.yml",
@@ -554,6 +555,16 @@ def validate_openai_yaml(errors: list[str]) -> None:
         errors.append(
             "agents/openai.yaml: interface.default_prompt must contain "
             f"{OPENAI_YAML_SKILL_TOKEN!r}"
+        )
+
+    allow_implicit_invocation = values["policy"].get("allow_implicit_invocation")
+    if (
+        isinstance(allow_implicit_invocation, bool)
+        and allow_implicit_invocation is not OPENAI_YAML_ALLOW_IMPLICIT_INVOCATION
+    ):
+        errors.append(
+            "agents/openai.yaml: policy.allow_implicit_invocation must be true "
+            "to match the public invocation contract"
         )
 
 

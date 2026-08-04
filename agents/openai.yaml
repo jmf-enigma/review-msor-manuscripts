@@ -1,7 +1,7 @@
 interface:
   display_name: "Review MS/OR Manuscripts"
   short_description: "Assess and draft evidence-calibrated MS/OR reviews"
-  default_prompt: "Use $review-msor-manuscripts to review this paper after verifying that AI processing is separately permitted; propose an evidence-anchored MS/OR review plan across Motivation, Execution, and Insight; and draft the referee report only after I confirm."
+  default_prompt: "Use $review-msor-manuscripts to review this paper only after the user provides the applicable authorization basis for AI processing; propose an evidence-anchored MS/OR review plan across Motivation, Execution, and Insight; and draft the referee report only after I confirm."
 
 policy:
   allow_implicit_invocation: true
