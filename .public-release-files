@@ -5,6 +5,7 @@
 .github/workflows/validate.yml
 .gitignore
 .public-release-files
+LICENSE
 README.md
 SKILL.md
 agents/openai.yaml

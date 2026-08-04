@@ -27,6 +27,7 @@ REQUIRED_RELEASE_FILES = {
     ".github/workflows/validate.yml",
     ".gitignore",
     ".public-release-files",
+    "LICENSE",
     "README.md",
     "SKILL.md",
     "agents/openai.yaml",
@@ -231,6 +232,7 @@ def allowed_location(relative_path: str) -> bool:
     if relative_path in {
         ".gitignore",
         ".public-release-files",
+        "LICENSE",
         "README.md",
         "SKILL.md",
         "agents/openai.yaml",

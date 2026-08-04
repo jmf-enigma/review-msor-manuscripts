@@ -195,6 +195,7 @@ review-msor-manuscripts/
 │   ├── ISSUE_TEMPLATE/
 │   └── workflows/validate.yml
 ├── .public-release-files
+├── LICENSE
 ├── SKILL.md
 ├── README.md
 ├── agents/
@@ -263,3 +264,7 @@ The synthetic evaluation suite is deliberately separated into visible prompts an
 ## Responsibility and Limitations
 
 The human reviewer remains responsible for checking every mathematical claim, citation, factual assertion, recommendation, and journal-policy requirement. The Skill may identify a route that requires external literature verification, symbolic or numerical testing, domain expertise, or information unavailable in the manuscript; such limits should remain explicit and should not be converted into unsupported criticism.
+
+## License
+
+Released under the [MIT License](LICENSE).
