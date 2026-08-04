@@ -18,7 +18,16 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / ".public-release-files"
+OPENAI_YAML_PATH = ROOT / "agents/openai.yaml"
 MAX_PUBLIC_FILE_BYTES = 1_048_576
+
+OPENAI_YAML_INTERFACE_FIELDS = {
+    "display_name",
+    "short_description",
+    "default_prompt",
+}
+OPENAI_YAML_POLICY_FIELDS = {"allow_implicit_invocation"}
+OPENAI_YAML_SKILL_TOKEN = "$review-msor-manuscripts"
 
 REQUIRED_RELEASE_FILES = {
     ".github/ISSUE_TEMPLATE/bug_report.yml",
@@ -366,6 +375,188 @@ def validate_frontmatter(errors: list[str]) -> None:
         errors.append("SKILL.md: document body is empty")
 
 
+def parse_openai_yaml_quoted_string(
+    raw_value: str,
+    number: int,
+    field: str,
+    errors: list[str],
+) -> str | None:
+    """Parse the deliberately small quoted-string subset supported here."""
+    location = f"agents/openai.yaml:{number}: {field}"
+    if len(raw_value) < 2 or raw_value[0] not in {'"', "'"}:
+        errors.append(f"{location} must be a quoted one-line string")
+        return None
+
+    if raw_value[0] == '"':
+        try:
+            value = json.loads(raw_value)
+        except json.JSONDecodeError:
+            errors.append(
+                f"{location} uses unsupported quoted-scalar syntax; "
+                "use a JSON-compatible double-quoted string"
+            )
+            return None
+        if not isinstance(value, str):
+            errors.append(f"{location} must be a quoted one-line string")
+            return None
+    else:
+        if raw_value[-1] != "'":
+            errors.append(f"{location} has an unterminated single-quoted string")
+            return None
+        inner = raw_value[1:-1]
+        characters: list[str] = []
+        index = 0
+        while index < len(inner):
+            if inner[index] != "'":
+                characters.append(inner[index])
+                index += 1
+                continue
+            if index + 1 >= len(inner) or inner[index + 1] != "'":
+                errors.append(
+                    f"{location} uses unsupported single-quoted syntax; "
+                    "escape an apostrophe as two single quotes"
+                )
+                return None
+            characters.append("'")
+            index += 2
+        value = "".join(characters)
+
+    if any(ord(character) < 32 for character in value):
+        errors.append(f"{location} must not contain control characters")
+        return None
+    if not value:
+        errors.append(f"{location} must not be empty")
+        return None
+    return value
+
+
+def validate_openai_yaml(errors: list[str]) -> None:
+    """Validate the fixed, two-level agents/openai.yaml subset used by this Skill."""
+    try:
+        text = OPENAI_YAML_PATH.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        errors.append(f"agents/openai.yaml: cannot read UTF-8 text: {exc}")
+        return
+
+    if not text.strip():
+        errors.append("agents/openai.yaml: file is empty")
+        return
+
+    expected_fields = {
+        "interface": OPENAI_YAML_INTERFACE_FIELDS,
+        "policy": OPENAI_YAML_POLICY_FIELDS,
+    }
+    values: dict[str, dict[str, object]] = {
+        "interface": {},
+        "policy": {},
+    }
+    section_lines: dict[str, int] = {}
+    field_lines: dict[str, dict[str, int]] = {
+        "interface": {},
+        "policy": {},
+    }
+    current_section: str | None = None
+    top_level_re = re.compile(r"^(?P<key>[A-Za-z_][A-Za-z0-9_-]*):$")
+    field_re = re.compile(
+        r"^  (?P<key>[A-Za-z_][A-Za-z0-9_-]*): (?P<value>.+)$"
+    )
+
+    for number, raw_line in enumerate(text.splitlines(), start=1):
+        if not raw_line.strip() or raw_line.lstrip().startswith("#"):
+            continue
+        if "\t" in raw_line:
+            errors.append(
+                f"agents/openai.yaml:{number}: tabs are not supported; use two-space indentation"
+            )
+            current_section = None
+            continue
+        if raw_line != raw_line.rstrip():
+            errors.append(f"agents/openai.yaml:{number}: trailing whitespace is not allowed")
+            raw_line = raw_line.rstrip()
+
+        top_level_match = top_level_re.fullmatch(raw_line)
+        if top_level_match:
+            section = top_level_match.group("key")
+            if section not in expected_fields:
+                errors.append(
+                    f"agents/openai.yaml:{number}: unsupported top-level key {section!r}; "
+                    "only 'interface' and 'policy' are allowed"
+                )
+                current_section = None
+                continue
+            if section in section_lines:
+                errors.append(
+                    f"agents/openai.yaml:{number}: duplicate top-level key {section!r} "
+                    f"(first declared on line {section_lines[section]})"
+                )
+            else:
+                section_lines[section] = number
+            current_section = section
+            continue
+
+        field_match = field_re.fullmatch(raw_line)
+        if not field_match:
+            errors.append(
+                f"agents/openai.yaml:{number}: unsupported syntax; expected a top-level "
+                "'interface:' or 'policy:' mapping, or a two-space-indented 'key: value' field"
+            )
+            current_section = None
+            continue
+        if current_section is None:
+            errors.append(
+                f"agents/openai.yaml:{number}: field appears outside a supported mapping"
+            )
+            continue
+
+        key = field_match.group("key")
+        raw_value = field_match.group("value")
+        if key not in expected_fields[current_section]:
+            errors.append(
+                f"agents/openai.yaml:{number}: unsupported field "
+                f"{current_section}.{key}"
+            )
+            continue
+        if key in field_lines[current_section]:
+            errors.append(
+                f"agents/openai.yaml:{number}: duplicate field {current_section}.{key} "
+                f"(first declared on line {field_lines[current_section][key]})"
+            )
+            continue
+        field_lines[current_section][key] = number
+
+        if current_section == "interface":
+            parsed = parse_openai_yaml_quoted_string(raw_value, number, key, errors)
+            if parsed is not None:
+                values[current_section][key] = parsed
+        elif raw_value in {"true", "false"}:
+            values[current_section][key] = raw_value == "true"
+        else:
+            errors.append(
+                f"agents/openai.yaml:{number}: policy.{key} must be the explicit "
+                "boolean true or false"
+            )
+
+    for section in ("interface", "policy"):
+        if section not in section_lines:
+            errors.append(f"agents/openai.yaml: missing required top-level mapping {section!r}")
+        for field in sorted(expected_fields[section] - values[section].keys()):
+            errors.append(f"agents/openai.yaml: missing required field {section}.{field}")
+
+    short_description = values["interface"].get("short_description")
+    if isinstance(short_description, str) and not 25 <= len(short_description) <= 64:
+        errors.append(
+            "agents/openai.yaml: interface.short_description must be 25-64 characters "
+            f"(found {len(short_description)})"
+        )
+
+    default_prompt = values["interface"].get("default_prompt")
+    if isinstance(default_prompt, str) and OPENAI_YAML_SKILL_TOKEN not in default_prompt:
+        errors.append(
+            "agents/openai.yaml: interface.default_prompt must contain "
+            f"{OPENAI_YAML_SKILL_TOKEN!r}"
+        )
+
+
 def validate_file_bytes(relative_path: str, errors: list[str]) -> str | None:
     path = ROOT / relative_path
     if path.is_symlink():
@@ -550,6 +741,7 @@ def main() -> int:
     manifest = parse_manifest(errors)
     candidates = validate_release_surface(manifest, errors)
     validate_frontmatter(errors)
+    validate_openai_yaml(errors)
 
     for relative_path in sorted(manifest & candidates):
         text = validate_file_bytes(relative_path, errors)
