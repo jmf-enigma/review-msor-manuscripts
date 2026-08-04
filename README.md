@@ -1,10 +1,10 @@
 # Review MS/OR Manuscripts
 
-[![Release v0.1.1](https://img.shields.io/badge/release-v0.1.1-blue.svg)](https://github.com/jmf-enigma/review-msor-manuscripts/releases/tag/v0.1.1)
+[![Release v0.1.2](https://img.shields.io/badge/release-v0.1.2-blue.svg)](https://github.com/jmf-enigma/review-msor-manuscripts/releases/tag/v0.1.2)
 [![Validate public skill](https://github.com/jmf-enigma/review-msor-manuscripts/actions/workflows/validate.yml/badge.svg)](https://github.com/jmf-enigma/review-msor-manuscripts/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A human-in-the-loop Codex Skill for finding the few issues that determine an MS/OR manuscript's publication case, connecting them to manuscript evidence, and preserving the paper's strongest assets. It reviews analytical, algorithmic, computational, empirical, and hybrid work in **Management Science**, **Operations Research**, and adjacent journals.
+A human-in-the-loop Codex Skill designed to help reviewers identify the few issues that may determine an MS/OR manuscript's publication case, connect them to manuscript evidence, and preserve the paper's strongest assets. It supports analytical, algorithmic, computational, empirical, and hybrid work in **Management Science**, **Operations Research**, and adjacent journals.
 
 It does more than locate technical errors. The Skill helps the reviewer form a paper-level judgment across **Motivation, Execution, and Insight**, asks whether the manuscript studies a genuinely first-order research object, and tests whether the model, theory, algorithm, evidence, and claims support one another.
 
@@ -12,7 +12,40 @@ It does more than locate technical errors. The Skill helps the reviewer form a p
 
 `manuscript + context -> proposed review plan -> reviewer confirmation -> referee report`
 
+[See the synthetic example](examples/synthetic-mini-review.md) ·
+[Install the stable release](#install-the-stable-release) · [Use the Skill](#use-it)
+
 > Use a nonpublic manuscript only when AI processing is separately permitted under the applicable journal, institutional, confidentiality, copyright, and data-handling requirements. An invitation to review is not, by itself, permission to upload material to an AI system.
+
+## See It in Action
+
+The [synthetic mini-review](examples/synthetic-mini-review.md) follows a fictional
+two-factory capacity-and-inventory paper from the proposed-plan checkpoint to a
+short report passage written only after confirmation.
+
+> **Fully synthetic illustration:** this example was constructed for this
+> repository and is not knowingly adapted from any specific real manuscript,
+> referee report, decision letter, or submission.
+
+| Checkpoint field | Illustrative output |
+|---|---|
+| Claimed contribution | Different policy-to-optimum gap rates are attributed to physical capacity flexibility. |
+| Strongest surviving asset | A tractable state-dependent allocation rule and a useful structural decomposition. |
+| Central concern | The two gaps use different system optima, information, decision timing, and policy constructions, so neither the economic value nor the rate attribution to flexibility is isolated. The claim is **not established**—not shown to be false. |
+| Author request | Separate approximation quality from the value of flexibility, then compare matched systems that differ only in cross-product feasibility. |
+| Interaction | The Skill stops here and asks the reviewer to confirm, revise, or drop the proposed comment before report drafting. |
+
+## This Skill Prioritizes
+
+| It prioritizes | Rather than |
+|---|---|
+| A paper-level Motivation–Execution–Insight thesis | An exhaustive checklist with no editorial hierarchy |
+| The first-order research object and closest consequential baseline | Accepting the manuscript's framing or novelty label at face value |
+| Matched comparisons that isolate the claimed mechanism | Comparing results with different information, recourse, policy classes, or resources |
+| Calibrated evidence states such as **not established** | Turning an unresolved premise into an unsupported claim that it is false |
+| A few root issues linked to publication consequences and repair paths | Filling a quota of disconnected comments |
+| The strongest surviving asset alongside the controlling bottleneck | Treating criticism as a search for defects only |
+| Reviewer confirmation before author-facing prose | Automatically converting tentative ideas into a final report |
 
 ## Quick Start
 
@@ -20,18 +53,22 @@ Use a Codex environment that supports Skills and discovers them from its configu
 
 ### Install the stable release
 
-Install the pinned `v0.1.1` release in the Codex skills directory:
+Install the pinned `v0.1.2` release in the Codex skills directory:
 
 ```bash
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-git clone --branch v0.1.1 --depth 1 \
+git clone --branch v0.1.2 --depth 1 \
   https://github.com/jmf-enigma/review-msor-manuscripts.git \
   "${CODEX_HOME:-$HOME/.codex}/skills/review-msor-manuscripts"
 ```
 
 Reload Codex or start a new task after installation.
 
-For a development install, use `--branch main` instead of `--branch v0.1.1 --depth 1`. Update a development install with:
+<details>
+<summary>Development installs, updates, version switching, disabling, and checks</summary>
+
+For a development install, use `--branch main` instead of
+`--branch v0.1.2 --depth 1`. Update a development install with:
 
 ```bash
 git -C "${CODEX_HOME:-$HOME/.codex}/skills/review-msor-manuscripts" \
@@ -59,20 +96,20 @@ test -f "${CODEX_HOME:-$HOME/.codex}/skills/review-msor-manuscripts/SKILL.md" \
   && echo "review-msor-manuscripts is installed"
 ```
 
+</details>
+
 ### Use it
 
 Invoke the Skill by name and provide the manuscript plus the review context:
 
 ```text
-Use $review-msor-manuscripts to review the attached initial-submission manuscript
+English: Use $review-msor-manuscripts to review this initial-submission manuscript
 for Management Science. First give me the proposed report plan and sharpest major
 comments. Do not draft the full report until I confirm.
-```
 
-```text
-用 $review-msor-manuscripts 审阅这篇 Operations Research 初稿。请重点判断问题
-是不是 first-order、理论相对最接近文献到底新增了什么，并检查模型、定理、算法和
-实验是否闭环。先给我审稿思路和 major comments，等我确认后再写完整报告。
+中文：用 $review-msor-manuscripts 审阅这篇 Operations Research 初稿。请重点判断
+研究对象是不是 first-order、理论相对最接近文献到底新增了什么，并检查模型、定理、
+算法和实验是否闭环。先给我审稿思路和 major comments，等我确认后再写完整报告。
 ```
 
 The Skill also permits implicit invocation for matching referee-style review tasks. Using `$review-msor-manuscripts` selects it explicitly; neither form establishes permission to process a source.
@@ -139,11 +176,43 @@ Calibration is an explicit, in-task comparison. The workflow itself does **not**
 ## Design Principles
 
 - **High recall in discovery, high selectivity in the report.** There is no issue quota.
-- **Stable judgment, adaptive diagnostics.** Tools and tables are used only when decision-relevant.
-- **Upper and lower levels stay connected.** Details must earn a motivation, validity, novelty, insight, or usefulness consequence.
+- **Common editorial questions, adaptive diagnostics.** Tools and tables are used only when decision-relevant.
+- **Evidence and consequence stay connected.** Details must earn a motivation, validity, novelty, insight, or usefulness consequence.
 - **Positive assets and defects are audited together.** The strongest surviving contribution remains visible.
 - **Recommendation follows ranked evidence.** It is not chosen first and rationalized afterward.
 - **Natural final prose.** The report should sound like one informed scholar explaining a coherent judgment.
+
+## Evidence and Limitations
+
+The repository distinguishes release-surface validation from review-quality
+evaluation:
+
+- On every push and pull request, GitHub Actions runs
+  `scripts/validate_public_skill.py` and a changed-line whitespace check. The
+  validator checks the public-file allowlist, supported file types, UTF-8,
+  internal resource references, frontmatter/YAML, and common leakage patterns.
+  It does not run a manuscript review or establish that a substantive judgment
+  is correct.
+- CI does **not** execute the bundled [synthetic behavior suite](evals/README.md).
+  When that suite is run separately, its documented
+  [forward-test protocol](evals/PROTOCOL.md) requires the candidate Skill to be
+  frozen, fresh case agents to receive an isolated snapshot that excludes the
+  repository-public evaluator rubrics, and outputs to be frozen before scoring.
+  Here, "sealed" describes the execution boundary; it does not mean that those
+  public files are secret. These tests probe workflow behaviors and failure guards.
+  They do not prove correctness on real manuscripts, cover every MS/OR domain,
+  or guarantee identical results across models, tools, and runtime settings.
+- Every bundled evaluation fact, equation, institution, and result is invented.
+  No real manuscript, report, decision, submission identifier, or confidential
+  answer is included.
+- This public repository is the complete release unit: only reusable logic,
+  templates, and synthetic examples belong in its Git history. Any separately
+  authorized nonpublic evaluation must remain outside this repository and its
+  fork network. Private visibility is access control, not permission to process
+  or store review material.
+- The human reviewer remains responsible for checking the manuscript evidence,
+  mathematical and empirical claims, citations, recommendation, confidentiality
+  obligations, and any journal-specific policy before submitting a report.
 
 ## Confidentiality, Source Control, and Limits
 
@@ -168,6 +237,7 @@ review-msor-manuscripts/
 ├── SKILL.md
 ├── agents/openai.yaml
 ├── assets/
+├── examples/
 ├── references/
 ├── evals/
 │   ├── README.md
@@ -189,6 +259,18 @@ The validator checks the public-file allowlist, supported types, UTF-8, referenc
 
 </details>
 
+## Project Guidance
+
+- Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a change; contributions
+  must use only public project information or fully synthetic materials.
+- Report release-surface, prompt-injection, or disclosure vulnerabilities through
+  the private path described in [SECURITY.md](SECURITY.md).
+- See [CHANGELOG.md](CHANGELOG.md) for release-facing changes.
+
 ## License
 
 Released under the [MIT License](LICENSE).
+
+If this workflow is useful in your research practice, consider
+[starring the repository](https://github.com/jmf-enigma/review-msor-manuscripts)
+so that other MS/OR researchers can find it.

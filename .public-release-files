@@ -2,11 +2,15 @@
 .github/ISSUE_TEMPLATE/bug_report.yml
 .github/ISSUE_TEMPLATE/config.yml
 .github/ISSUE_TEMPLATE/feature_request.yml
+.github/PULL_REQUEST_TEMPLATE.md
 .github/workflows/validate.yml
 .gitignore
 .public-release-files
+CHANGELOG.md
+CONTRIBUTING.md
 LICENSE
 README.md
+SECURITY.md
 SKILL.md
 agents/openai.yaml
 assets/calibration-case-template.md
@@ -28,6 +32,7 @@ evals/sealed/rubrics/case-c.md
 evals/sealed/rubrics/case-d.md
 evals/sealed/rubrics/case-e.md
 evals/sealed/rubrics/case-f.md
+examples/synthetic-mini-review.md
 references/analytical-and-algorithmic-audit.md
 references/calibration-learning.md
 references/confidentiality-and-source-control.md
