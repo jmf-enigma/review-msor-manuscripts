@@ -1,4 +1,7 @@
 interface:
-  display_name: "MS/OR Referee Review"
-  short_description: "Generate and prioritize sharp MS/OR review ideas"
-  default_prompt: "Use $review-msor-manuscripts to review this paper only after confirming that it is public or separately authorized for processing; assess Motivation, Execution, and Insight; propose the prioritized report plan first; and draft the report only after I confirm."
+  display_name: "Review MS/OR Manuscripts"
+  short_description: "Assess and draft evidence-calibrated MS/OR reviews"
+  default_prompt: "Use $review-msor-manuscripts to review this paper only after the user provides the applicable authorization basis for AI processing; propose an evidence-anchored MS/OR review plan across Motivation, Execution, and Insight; and draft the referee report only after I confirm."
+
+policy:
+  allow_implicit_invocation: true
